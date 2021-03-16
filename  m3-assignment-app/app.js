@@ -3,6 +3,7 @@ const path = require('path'); //need it to connect to Views directory
 const routes = require('./routes/index');
 
 const app = express();
+app.use(express.static('public'));
 
 const bodyParser = require('body-parser'); //to retrieve whatever data the user has submitted via the form
 
