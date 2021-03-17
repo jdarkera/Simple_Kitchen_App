@@ -24,7 +24,7 @@ app.set('view engine', 'pug'); //determine the type of template
 // app.set('views', path.join(__dirname, 'views')); 
 // app.set('view engine','pug');
 
-app.get('/components', function(req, res) {
+app.get('/', function(req, res) {
     res.render('content');
 });
 
