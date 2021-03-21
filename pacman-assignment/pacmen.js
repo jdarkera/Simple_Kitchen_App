@@ -66,8 +66,20 @@ function checkCollisions(item) {
   if((y + 100) > canvasHeight) {    
     var tempt = (y + ballRadius) - canvasHeight;    item.position.y = canvasHeight - tempt - ballRadius;
   }
-}
-
+// var canvasWidth = windows.innerWidth;
+// var canvasHeight = window.innerHeight; 
+// var imageWidth = item.newimg.width; 
+// var imageHeight = item.newimg.height;
+// var x = item.position.x;
+// var y = item.position.y; 
+// }
+// //right 
+// if((x +imageWidth) >= 0){
+//   item.velocity.x = -item.velocity.x;
+//   item.position.x = canvasWidth - imageWidth;
+// }
+// //left 
+// if()
 // // To create an animation, instantiate a new Bounce object:
 
 // var bounce = new Bounce();
