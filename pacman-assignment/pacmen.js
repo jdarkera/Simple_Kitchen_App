@@ -53,8 +53,48 @@ function update() {
 
 function checkCollisions(item) {
   // TODO: detect collision with all walls and make pacman bounce
-  
+  var canvasWidth = 1424; 
+  var canvasHeight = 445; 
+  var ballRadius = item.width; 
+  var x = item.position.x;  
+  var y = item.position.y;  
+
+  if((x + 100) > canvasWidth) {    
+    var tempt = (x + ballRadius) - canvasWidth;    
+    item.position.x = canvasWidth - tempt - ballRadius;
+   }  
+  if((y + 100) > canvasHeight) {    
+    var tempt = (y + ballRadius) - canvasHeight;    item.position.y = canvasHeight - tempt - ballRadius;
+  }
 }
+
+// // To create an animation, instantiate a new Bounce object:
+
+// var bounce = new Bounce();
+// bounce
+//   .translate({
+//     from: { x: -300, y: 0 },
+//     to: { x: 0, y: 0 },
+//     duration: 600,
+//     stiffness: 4
+//   })
+//   .scale({
+//     from: { x: 1, y: 1 },
+//     to: { x: 0.1, y: 2.3 },
+//     easing: "sway",
+//     duration: 800,
+//     delay: 65,
+//     stiffness: 2
+//   })
+//   .scale({
+//     from: { x: 1, y: 1},
+//     to: { x: 5, y: 1 },
+//     easing: "sway",
+//     duration: 300,
+//     delay: 30,
+//   })
+//   .applyTo(document.querySelectorAll(".animation-target"));
+//   // bounce.applyTo($(".animation-target")); //JQuery
 
 
 function makeOne() {
