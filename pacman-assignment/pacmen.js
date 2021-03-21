@@ -53,33 +53,92 @@ function update() {
 
 function checkCollisions(item) {
   // TODO: detect collision with all walls and make pacman bounce
-  var canvasWidth = 1424; 
-  var canvasHeight = 445; 
-  var ballRadius = item.width; 
-  var x = item.position.x;  
-  var y = item.position.y;  
+  var canvasWidth = window.innerWidth;
+  var canvasHeight = window.innerHeight;
+  var imageWidth = item.newimg.width;
+  var imageHeight = item.newimg.height;
+  var x = item.position.x;
+  var y = item.position.y;
+  var xVel = item.velocity.x;
+  var yVel = item.velocity.y;
+  // var bounce = 0.75; //Lose 25% velocity
+  // var friction = 0.98;
+  // var gravity =  0.25;
 
-  if((x + 100) > canvasWidth) {    
-    var tempt = (x + ballRadius) - canvasWidth;    
-    item.position.x = canvasWidth - tempt - ballRadius;
-   }  
-  if((y + 100) > canvasHeight) {    
-    var tempt = (y + ballRadius) - canvasHeight;    item.position.y = canvasHeight - tempt - ballRadius;
+  // right 
+  if((x + xVel + imageWidth) >= canvasWidth) {
+    //item.velocity.x *= -bounce;
+    item.velocity.x = -xVel;
+    item.position.x = canvasWidth - imageWidth;
   }
+  //left
+  if((x - imageWidth) <= 0) {
+    //item.velocity.x *= -bounce;
+    item.velocity.x = -xVel;
+    item.position.x = imageWidth;
+  }
+  //bottom
+  if((y + yVel + imageHeight) >= canvasHeight) {
+    //item.velocity.y *= -bounce;
+    item.velocity.y = -yVel;
+    item.position.y = canvasHeight - imageHeight;
+    //item.velocity.x *= friction;
+  }
+  //top
+  if((y - imageHeight) <= 0) {
+    //item.velocity.y *= -bounce;
+    item.velocity.y = -yVel;
+    item.position.y = imageHeight;
+    //item.velocity.x *= friction;
+  }
+  //item.velocity.y += gravity;
+}
+
+// function checkCollisions(item) {
+//   // TODO: detect collision with all walls and make pacman bounce
+//   // var canvasWidth = 1424; 
+//   // var canvasHeight = 445; 
+//   // var ballRadius = item.width; 
+//   // var x = item.position.x;  
+//   // var y = item.position.y;  
+
+//   // if((x + 100) > canvasWidth) {    
+//   //   var tempt = (x + ballRadius) - canvasWidth;    
+//   //   item.position.x = canvasWidth - tempt - ballRadius;
+//   //  }  
+//   // if((y + 100) > canvasHeight) {    
+//   //   var tempt = (y + ballRadius) - canvasHeight;    item.position.y = canvasHeight - tempt - ballRadius;
+//   // }
 // var canvasWidth = windows.innerWidth;
 // var canvasHeight = window.innerHeight; 
 // var imageWidth = item.newimg.width; 
 // var imageHeight = item.newimg.height;
 // var x = item.position.x;
 // var y = item.position.y; 
-// }
+
 // //right 
-// if((x +imageWidth) >= 0){
+// if((x + imageWidth) >= canvasWidth){
 //   item.velocity.x = -item.velocity.x;
 //   item.position.x = canvasWidth - imageWidth;
 // }
 // //left 
-// if()
+//  if((x - imageWidth)<= 0) {
+//    item.velocity.x = -item.velocity.x;
+//    item.position.x = imageWidth; 
+//  }
+//  //bottom
+//  if((y + imageHeight) >= canvasHeight) {
+//   item.velocity.y = -item.velocity.y;
+//   item.position.y = canvasHeight - imageHeight;
+// }
+// //top
+// if((y - imageHeight) <= 0){
+//   item.velocity.y = -item.velocity.y;
+//   item.position.y = imageHeight;
+// }
+// item.position.x += item.velocity.x;
+// item.position.y += item.velocity.y;
+// }
 // // To create an animation, instantiate a new Bounce object:
 
 // var bounce = new Bounce();
