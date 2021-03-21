@@ -22,10 +22,13 @@ function makePac() {
   newimg.width = 100;
 
   // TODO: set position here
+ newimg.style.left = "10px";
+ newimg.style.right = "10px";
+
 
 
   // TODO add new Child image to game
-  game.appendChild(/* TODO: add parameter */);
+  game.appendChild(newimg);
 
   // return details in an object
   return {
@@ -52,6 +55,7 @@ function checkCollisions(item) {
   // TODO: detect collision with all walls and make pacman bounce
   
 }
+
 
 function makeOne() {
   pacMen.push(makePac()); // add a new PacMan
