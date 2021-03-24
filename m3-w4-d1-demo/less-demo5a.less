@@ -1,0 +1,10 @@
+@import "lib.less";
+#namespace when (@color = blue) {
+   .mixin() {
+      color: red;
+   }
+}
+
+p {
+   #namespace .mixin();
+}
