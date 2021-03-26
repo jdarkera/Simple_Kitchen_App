@@ -1,0 +1,209 @@
+/* Header */
+header {
+    width: 100%;
+    min-height: 400px;
+    min-height: 400px;
+    padding-top: 3em;
+}
+#home header {
+background: no-repeat lightgray url(images/jenny-marvin-sljtwVaSj08-unsplash.jpg);
+background-size: 1500px;
+}
+/* Display different background images on the header for activities, and contact html */
+#activities header {
+    background: no-repeat lightgrey url(images/kazuky-akayashi-p184vYrKCEk-unsplash.jpg);
+    background-size: 1500px;
+}
+#contact header {
+    background: no-repeat lightgrey url(images/jenny-marvin-sljtwVaSj08-unsplash.jpg);
+    background-size: 1500px;
+}
+.main-header {
+background-color:rgb(255,255,255,0.8);
+width:500px;
+margin: auto;
+min-height: 100px; 
+height: 100px; 
+}
+.main-header .logo img {
+    width: 100px;
+    height: 100px;
+    margin: 0 2em 0 0;
+    float: left;
+}
+/* Navigation */
+.main-menu {
+    margin-left: 100px;
+    font-weight: 400;
+
+}
+.main-menu ul li {
+    list-style-type:none;
+    /* display: inline-block;  */
+    display:inline-block;
+    padding-right: 5px; 
+    border-left: 1px solid rgba(202, 204, 202, 0.6);
+    line-height: 100px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.main-menu ul li a { 
+    text-decoration: none;
+    color: #888;
+}
+.main-menu ul li a:hover {
+    color: #9ed034;
+}
+.main-menu ul li.active {
+    background: #9ed034;
+    border: none;
+}
+.main-menu ul li.active a {
+    color: #fff;
+}
+/* Main */
+.main-menu ul li.active a {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.main-menu ul li.active a {
+    color: #9ed034;
+}
+.Sub-Title {
+    color: #9ed034
+}
+
+/* Catalog*/
+.Tagline {
+   text-align: center; 
+   color: #9ed034;
+}
+section {
+    width: 100%;
+    background-color: #fff
+}
+section #catalogue {
+    width: 100px;
+    padding: 2em 0 2em 0; 
+    margin: 0 auto; 
+    text-align: center;
+}
+section #catalogue .catalogue {
+    display: inline-block;
+    margin: 0 0.75em;
+    padding: 1.3em 1.5em;
+    background-color: #fff;
+    border-radius: 50%;
+}
+section #catalogue .catalogue img {
+    width: 90px;
+    height: 90px; 
+}
+/* Footer */
+footer {
+    width: 100%;
+    height: 155px;
+    padding-bottom: 1em;
+    background-color:#ecfab8;
+}
+footer #nondisclaimer .copy {
+    padding: 3.5em 3.5em 3.5em 3.5em; 
+    float: left;
+    font-size: 0.9em;
+}
+footer #nondisclaimer .social {
+    padding: 2.5em; 
+    margin-right: 9.25em;
+    float: right;
+}
+footer #disclaimer p { 
+    font-size: 0.85em;
+    text-align: center;
+    clear: both;
+}
+/* Style icon fonts */
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+/* Adding a hover effect */
+.fa:hover {
+    opacity: 0.7;
+
+}
+/* setting a specific color for each brand */
+/* Facebook */
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+
+}
+.fa-instagram{
+    background: palevioletred;
+    color: white;
+}
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+/* Featured */
+table {
+    width: 1000px;
+    margin: 4em auto 0 auto;
+}
+caption {
+    background: #852b1b;
+    height: 40px;
+    color: #fff; 
+    font-size: 1.3em;
+    font-weight: bold;
+    padding-top: 1em;
+}
+thead {
+    background: #bde1ff; 
+}
+tbody {
+    background: #EEFFE6;
+    text-align: center; 
+}
+th,td {
+    width: 225px; 
+    height: 75px;
+    vertical-align: middle;
+    border: solid 1px #852b1b;
+}
+th:first-child {
+    width: 125px;
+    height: 50px;
+    background: #4977d1;
+    color: #fff;
+}
+td:first-child {
+    font-weight: bold; 
+    background: #bde1ff;
+}
+/* Contact Page Styling */
+legend {
+   color:black;
+   font-weight: bold;
+   
+}
+.button input {
+    background-color:#4977D1 ;
+    color: #fff;
+}
+form {
+    margin: 20px;
+    padding: 3.5em 3.5em 3.5em 3.5em;
+}
+.phone, .email {
+    margin: 20px;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+}
+label {
+    display: block;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    font-weight: bold;
+}

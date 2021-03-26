@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jerusalem's Local Pet Adoption Service</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--External CSS Style Method-->
+        <link rel="stylesheet" href="style.css">
+    </head>
+     <body id="contact">
+        <!--Container to wrap everything-->
+        <div id="container">
+            <header>
+                    <div class="main-header">
+                    <nav class="main-menu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="featuredpets.html">Featured Pets</a></li>
+                        <li class="contact"><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav> 
+                    </div>
+            </header>
+                <main>
+                    <h1>Find Your Ideal Pet Today!</h1>
+                    <form action="/contact" method="post">  
+                        <fieldset>  
+                            <legend>CONTACT FORM</legend>
+                            <div class="textbox">
+                               <div>
+                                    <label>Name:</label> 
+                                    <input type="text" name="name" placeholder="John Doe">  
+                                </div> 
+                                <div>
+                                    <label>Email:</label>  
+                                    <input type="email" name="email" placeholder="johndoe@gmail.com"> 
+                                </div>
+                                <div>
+                                    <label>Phone:</label>
+                                    <input type="text" name="phone" placeholder="xxx-xxx-xxxx"> 
+                                </div>
+                            </div>
+                            
+                            <div class="radios">
+                                <label>How should we contact you?</label>  
+                                <input type="radio" name="contact" value="email" checked>Email 
+                                <input type="radio" name="contact" value="phone">Phone
+                            </div>
+                        
+                            <div class="selectmenu">
+                                <label>Select Your Pet</label>  
+                                <select>
+                                    <option>Dog</option>
+                                    <option>Cat</option>
+                                </select>
+                            </div>
+                            <div class="commentbox">
+                                <label>Leave a comment:</label>  
+                                <textarea></textarea>
+                            </div>                
+                            <div class="button">
+                                <input type="submit" value="Inquire">
+                            </div> 
+                        </fieldset>  
+                        </form>
+                </main>
+                <footer>
+                    <div id="nondisclaimer">
+                        <div class="copy">&copy;Copyright 2020 :: Jerusalem's Local Pet Adoption Service</div>
+                        <div class="social"> 
+                            <a href="#" class="fa fa-facebook"></a>
+                            <a href="#" class="fa fa-instagram"></a>
+                            <a href="#" class="fa fa-twitter"></a>
+                        </div>  
+                    </div>          
+                </footer>
+            </div> <!--End Container-->
+                 </body>
+            </html>
