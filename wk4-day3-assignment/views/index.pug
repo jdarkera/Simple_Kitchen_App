@@ -1,15 +1,64 @@
 extends layout
 
 block content
+    head
+        link(rel='preconnect' href='https://fonts.gstatic.com')
+        link(href='https://fonts.googleapis.com/css2?family=Sacramento&display=swap' rel='stylesheet')
+        link(rel='StyleSheet' href='/css/styles.css' type='text/css')
 
-    if registrations.length
-        table.listing-table.table-dark.table-striped
-            tr
-                th Name
-                th Email
-            each registration in registrations
-                tr
-                    td= registration.name
-                    td= registration.email
-    else
-        p No registrations yet :(
+        meta(charset='utf-8')
+    body
+        header
+            nav
+                ul
+                    li
+                        a(href='/') Home
+                    li |
+                    li
+                        a(href='#') Blog
+                    a.register(href='/register') Register
+        main
+            section#intro-text
+                span Simple Kitchen
+                h3
+                    | Simple &amp; Comforting 
+                    br
+                    |             Recipes All Year Round
+                p Pan-seared chicken, Grill shrimp, mac &amp; cheese&mdash;need we say more?
+                button.submit-button View Recipes
+            section#intro-image
+                img(src='images/louisiana-barbecued-shrimp.webp' alt='Louisiana Barbecued Shrimp')
+        footer
+            | &copy; Copyright 2021
+
+//- doctype html
+//- head
+//-   link(rel='preconnect' href='https://fonts.gstatic.com')
+//-   link(href='https://fonts.googleapis.com/css2?family=Sacramento&display=swap' rel='stylesheet')
+//-   link(rel='StyleSheet' href='css/styles.css' type='text/css')
+//-   script(src='script.js')
+//- header
+//-   nav
+//-     ul
+//-       li
+//-         a(href='/') Home
+//-       li |
+//-       li
+//-         a(href='#') Blog
+//- main
+//-   section#intro-text
+//-     span Simple Kitchen
+//-     h3
+//-       | Simple &amp; Comforting 
+//-       br
+//-       |             Recipes All Year Round
+//-     p Pan-seared chicken, Grill shrimp, mac &amp; cheese&mdash;need we say more?
+//-     //
+//-       <p class="success">SUCCESS</p>
+//-       <p class="error">ERROR</p>
+//-       <p class="warning">WARNING</p>
+//-     button.submit-buttton View Recipes
+//-   section#intro-image
+//-     img(src='images/louisiana-barbecued-shrimp.webp' alt='Louisiana Barbecued Shrimp')
+//- footer
+//-   | &copy; Copyright 2021

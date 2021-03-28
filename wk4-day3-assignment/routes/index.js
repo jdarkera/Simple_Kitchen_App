@@ -9,11 +9,23 @@ const Registration = mongoose.model('Registration');
 const basic = auth.basic({
   file: path.join(__dirname, '../users.htpasswd'),
 });
+router.get('/', function (req,res){
+  res.render('index', {title: "Welcome"});
+})
 
-router.get('/', (req, res) => {
-  //res.send('It works!');
-  res.render('form', { title: 'Registration form' });
+router.get('/register', function (req,res){
+  res.render('register', {title: "Registration form"});  
 });
+
+// router.get('/', (req, res) => {
+//   //res.send('It works!');
+//   res.render('form', { title: 'Registration form' });
+// });
+// this for simple kitchen 
+// router.get('/', (req, res) => {
+//   //res.send('It works!');
+//   res.render('index', { title: 'Simple Kitchen' });
+// });
 
 router.get('/registrations', basic.check((req, res) => {
   Registration.find()
