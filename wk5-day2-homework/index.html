@@ -27,9 +27,13 @@
 </head>
 <body>
 
-    <div id="root">
+    <div id="root"> 
+        <ul>
+            <li v-for="item in shoplist" v-text="item"></li>
+        </ul>
+        <input id="inputItem" type="text" v-model="newItem">
+        <button id="btn" v-on:click="addItem">Add item</button> <!--OR @click--> 
 
-        
 
     </div>
 
@@ -37,11 +41,33 @@
         //Vue instance
         let app = new Vue({
             el: '#root',
-
+//creating an array called shoplist with some initial grocery items in it:
             data: {
-                
+                newItem:'', 
+                shoplist: ['Salad', 'Eggs', 'Apples', 'Chicken']
+            },
+            methods: {
+                addItem() {
+                    this.shoplist.push(this.newItem);
+                    this.newItem='';
+                }
             }
-        })
+            // mounted(){
+            //     //create event listener for button using vanilla JS
+            //     document.querySelector("#btn").addEventListener('click',() => {
+            //         let item= document.querySelector("#inputItem");
+            //         app.shoplist.push(item.value);
+            //         //clear text in text box
+            //         item.value='';
+            //     });
+            
+        });
+        // document.querySelector('#btn').addEventListener('click',() => {
+        //     let item= document.querySelector("#inputItem").value;
+        //     app.shoplist.push(item.value);
+        //     // Clear text in text box 
+        //     item.value = ''; 
+        // });
     </script>
     
 </body>
