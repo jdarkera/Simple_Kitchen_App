@@ -1,3 +1,6 @@
-# Food Blog 
-converted the foodblog html page to pug using include and components. 
-Used Express.js templating engine.
+Simple Kitchen App
+Converted an existing application as well as integrating a recent lab
+assignment into one unified application that utilizes these technologies:
+● MongoDB
+● Express
+● SASS
