@@ -4,8 +4,10 @@ block content
     head
         link(rel='preconnect' href='https://fonts.gstatic.com')
         link(href='https://fonts.googleapis.com/css2?family=Sacramento&display=swap' rel='stylesheet')
-        link(rel='StyleSheet' href='/css/styles.css' type='text/css')
-        link(rel='StyleSheet' href='/css/form.css' type='text/css')
+        //- link(rel='StyleSheet' href='css/styles.css' type='text/css')
+        link(rel='StyleSheet' href='css/form.css' type='text/css')
+        link(rel='StyleSheet' href='css/styles.css' type='text/css')
+        link(rel='StyleSheet' href='css/nav.css' type='text/css')
         meta(charset='utf-8')
     body
         header
@@ -51,7 +53,36 @@ block content
                         class="form-control"
                         value=data.email
                     )
-                    button(type="submit" value="Register") Register
+                      label(for="username") username:
+                    input(
+                        type="text"
+                        id="username"
+                        name="username"
+                        class="form-control"
+                        value=data.username
+                    )
+
+                    label(for="password") Password:
+                    input(
+                        type="password"
+                        id="password"
+                        name="password"
+                        class="form-control"
+                        value=data.password
+                    )
+                    //- Adding two more fields on the register form 
+                     .field
+                    //- label Username:
+                    //-     input(type='text' name='username')
+                    //-         br
+                    //-  .field
+                    //- label Password:
+                    //- input(type='password' name='password' required='')
+                    //- button(type="submit" value="Register") Register
+                    //- .field
+                    //- input.submit-btn(type='submit' value='Submit' required='')
+                    //- label#error-message
+
         footer
             | &copy; Copyright 2021
     //- -data = data || {}
