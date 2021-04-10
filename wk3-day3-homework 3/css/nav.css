@@ -1,9 +1,0 @@
-/* Nest Nav */
-nav ul li {
-  display: inline; }
-  nav ul li a:link, nav ul li a:visited {
-    color: white;
-    text-decoration: none; }
-  nav ul li a:hover, nav ul li a:active {
-    color: #3a6bd4;
-    text-decoration: underline; }
