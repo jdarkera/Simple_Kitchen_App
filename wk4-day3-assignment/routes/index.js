@@ -1,8 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const {check, validationResult} = require('express-validator');
 const path = require('path');
 const auth = require('http-auth');
-const { check, validationResult } = require('express-validator');
+const bcrypt = require('bcrypt'); 
+// const { check, validationResult } = require('express-validator');
 
 const router = express.Router();
 const Registration = mongoose.model('Registration');
@@ -53,24 +55,51 @@ router.post('/',
         .withMessage('Please enter a password'),
 
     ],
-    (req, res) => {
-        //console.log(req.body);
-        const errors = validationResult(req);
-        if (errors.isEmpty()) {
+    async (req,res) => {
+      const errors = validationResult(req); 
+      if (errors.isEmpty()){ 
           const registration = new Registration(req.body);
-          registration.save()
-            .then(() => {res.send('Thank you for your registration!');})
-            .catch((err) => {
-              console.log(err);
-              res.send('Sorry! Something went wrong.');
-            });
-          } else {
-            res.render('form', { 
-                title: 'Registration form',
-                errors: errors.array(),
-                data: req.body,
-             });
-          }
-    });
+          //generate salt to hash password
+          const salt = await bcrypt.genSalt(10);
+          //set user password to hashed password
+          registration.password = await bcrypt.hash(registration.password, salt);
 
+          // Registration.findOne({registration.email == email} )
+          registration.save()   
+              // .then(() => {res.send('Thank you for your registration');})
+              .then(() => {
+                  res.render('thankyou', {title: "Thank you"});
+              })
+
+              .catch((err) => {
+                  console.log(err);
+                  res.send('Sorry! Something went wrong')
+              });
+      }else{
+          res.render('register', {
+              title: 'Registration form',
+              errors: errors.array(),
+              data:req.body
+          });
+      }
+  });
+    // (req, res) => {
+    //     //console.log(req.body);
+    //     const errors = validationResult(req);
+    //     if (errors.isEmpty()) {
+    //       const registration = new Registration(req.body);
+    //       registration.save()
+    //         .then(() => {res.send('Thank you for your registration!');})
+    //         .catch((err) => {
+    //           console.log(err);
+    //           res.send('Sorry! Something went wrong.');
+    //         });
+    //       } else {
+    //         res.render('form', { 
+    //             title: 'Registration form',
+    //             errors: errors.array(),
+    //             data: req.body,
+    //          });
+    //       }
+    // });
 module.exports = router;
