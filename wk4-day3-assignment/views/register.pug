@@ -4,10 +4,8 @@ block content
     head
         link(rel='preconnect' href='https://fonts.gstatic.com')
         link(href='https://fonts.googleapis.com/css2?family=Sacramento&display=swap' rel='stylesheet')
-        //- link(rel='StyleSheet' href='css/styles.css' type='text/css')
-        link(rel='stylesheet' href='css/form.css' type='text/css')
-        link(rel='stylesheet' href='css/styles.css' type='text/css')
-        link(rel='stylesheet' href='css/nav.css' type='text/css')
+        link(rel='StyleSheet' href='css/styles.css' type='text/css')
+        link(rel='StyleSheet' href='css/form.css' type='text/css')
         meta(charset='utf-8')
     body
         header
@@ -53,7 +51,8 @@ block content
                         class="form-control"
                         value=data.email
                     )
-                      label(for="username") username:
+
+                    label(for="username") Username:
                     input(
                         type="text"
                         id="username"
@@ -61,57 +60,15 @@ block content
                         class="form-control"
                         value=data.username
                     )
-
+                    
                     label(for="password") Password:
                     input(
-                        type="password"
+                        type="text"
                         id="password"
                         name="password"
                         class="form-control"
                         value=data.password
                     )
-                    //- Adding two more fields on the register form 
-                     .field
-                    //- label Username:
-                    //-     input(type='text' name='username')
-                    //-         br
-                    //-  .field
-                    //- label Password:
-                    //- input(type='password' name='password' required='')
-                    //- button(type="submit" value="Register") Register
-                    //- .field
-                    //- input.submit-btn(type='submit' value='Submit' required='')
-                    //- label#error-message
-
+                    button(type="submit" value="Register") Register
         footer
             | &copy; Copyright 2021
-    //- -data = data || {}
-
-    //- if errors
-    //-     ul.my-errors
-    //-     for error in errors
-    //-         li= error.msg
-    //- form(action="." method="POST" class="form-registration")
-    //-     label(for="name") Name:
-    //-     input(
-    //-         type="text"
-    //-         id="name"
-    //-         name="name"
-    //-         class="form-control"
-    //-         value=data.name
-    //-     )
-
-    //-     label(for="email") Email:
-    //-     input(
-    //-         type="email"
-    //-         id="email"
-    //-         name="email"
-    //-         class="form-control"
-    //-         value=data.email
-    //-     )
-
-    //-     input(
-    //-         type="submit" 
-    //-         value="Submit"
-    //-         class="btn btn-lg btn-primary btn-block"
-    //-     )
