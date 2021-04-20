@@ -4,22 +4,17 @@ const {check, validationResult} = require('express-validator');
 const path = require('path');
 const auth = require('http-auth'); //locking down the list of successful registrations from prying eyes.
 const bcrypt = require('bcrypt'); 
-
 const router = express.Router();
 const Registration = mongoose.model('Registration'); 
-
 const basic = auth.basic({
     file: path.join(__dirname, '../users.htpasswd')
 })
-
 router.get('/', function (req,res){
     res.render('index', {title: "Welcome"});
 })
-
 router.get('/register', function (req,res){
     res.render('register', {title: "Registration form"});  
 });
-
 router.get('/registrants', basic.check((req,res) => {
     Registration.find()
         .then((registrations) => {
@@ -27,7 +22,6 @@ router.get('/registrants', basic.check((req,res) => {
         })
         .catch(() => {res.send('Sorry! Something went wrong.');});
 }));
-
 router.post('/', 
     [
         check('name')
@@ -38,7 +32,6 @@ router.post('/',
             .exists()
             .isLength({min:1})
             .withMessage('Please enter an email'),
-            
         check('username')
             .isLength({min:1})
             .exists()
@@ -55,14 +48,12 @@ router.post('/',
             const salt = await bcrypt.genSalt(10);
             //set user password to hashed password
             registration.password = await bcrypt.hash(registration.password, salt);
-
             // Registration.findOne({registration.email == email} )
             registration.save()   
                 // .then(() => {res.send('Thank you for your registration');})
                 .then(() => {
                     res.render('thankyou', {title: "Thank you"});
                 })
-
                 .catch((err) => {
                     console.log(err);
                     res.send('Sorry! Something went wrong')
@@ -75,9 +66,7 @@ router.post('/',
             });
         }
     });
-
 module.exports = router;
-
 // const express = require('express');
 // const mongoose = require('mongoose');
 // const {check, validationResult} = require('express-validator');
